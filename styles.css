@@ -1,0 +1,113 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffafbd, #ffc3a0);
+    background-size: cover;
+    transition:0.5s ease;
+}
+h1 {
+    opacity: 0;
+    color: #333;
+}
+
+.content {
+    display: none;
+}
+.active {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Center items horizontally */
+    text-align: center; 
+}
+.active h1 {
+    animation: revealtwo 0.25s cubic-bezier(0.77, 0, 0.175, 1) 0.25s forwards;
+}
+#INTRO {
+    animation: reveal 2.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+}
+#LATER {
+    animation: revealthree 4s cubic-bezier(0.77, 0, 0.175, 1) 0.25s forwards;
+}
+
+.bottom-right {
+    padding: 10px 20px; /* Example padding */
+    position: absolute; /* Absolute positioning relative to the parent */
+    bottom: 20px; /* Distance from the bottom edge of the parent container */
+    right: 20px; /* Distance from the right edge of the parent container */
+    animation: fadeIn 3s;
+}
+.bottom-left {
+    padding: 10px 20px; /* Example padding */
+    position: absolute; /* Absolute positioning relative to the parent */
+    bottom: 20px; /* Distance from the bottom edge of the parent container */
+    left: 20px; /* Distance from the right edge of the parent container */
+    animation: fadeIn 2s;
+}
+.bottom-right-stay {
+    padding: 10px 20px; /* Example padding */
+    position: absolute; /* Absolute positioning relative to the parent */
+    bottom: 20px; /* Distance from the bottom edge of the parent container */
+    right: 20px;/* Distance from the right edge of the parent container */
+}
+.bottom-left-stay {
+    padding: 10px 20px; /* Example padding */
+    position: absolute; /* Absolute positioning relative to the parent */
+    bottom: 20px; /* Distance from the bottom edge of the parent container */
+    left: 20px; /* Distance from the right edge of the parent container */
+}
+.text-box {
+    width: 300px;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+@keyframes reveal {
+    0% {
+        transform: translate(0,100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+@keyframes revealtwo {
+    0% {
+        transform: translate(0,0%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+@keyframes revealthree {
+    0% {
+        transform: translate(0,0%);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(0,0%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
