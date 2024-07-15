@@ -167,7 +167,7 @@ window.onload = function() {
                 nextHeader.classList.remove('hidden');
                 nextHeader.classList.add('active');
                 currentIndexIntro++;
-                setTimeout(showNextHeader, 1000); // Call the function again after 5 seconds
+                setTimeout(showNextHeader, 6000); // Call the function again after 5 seconds
             } else {
                 // If there are no more headers, call showNextDiv()
                 showNextDiv();
