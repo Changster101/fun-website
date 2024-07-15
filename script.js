@@ -167,7 +167,7 @@ window.onload = function() {
                 nextHeader.classList.remove('hidden');
                 nextHeader.classList.add('active');
                 currentIndexIntro++;
-                setTimeout(showNextHeader, 6000); // Call the function again after 5 seconds
+                setTimeout(showNextHeader, 5000); // Call the function again after 5 seconds
             } else {
                 // If there are no more headers, call showNextDiv()
                 showNextDiv();
@@ -175,7 +175,7 @@ window.onload = function() {
         }
     }
     
-        setTimeout(showNextHeader, 1000);
+        setTimeout(showNextHeader, 10000);
     }; 
 
 function revealhidden() {
