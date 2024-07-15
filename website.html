@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIRTHDAY BIRTHDAY BIRTHDAY</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <audio id="backgroundAudio" src="Images/audio.mp3" autoplay loop hidden></audio>
+    <div class="content active" id = "STARTSCREEN">
+        <h1 id="INTRO">Happy Birthday Sydney!</h1>
+        <h1 class = "hidden" id="INTROTWO">I wasn't sure what to get you so...</h1>
+        <h1 class = "hidden" id="INTROTHREE">I made this 😃</h1>
+        <h1 class = "hidden" id="INTROFOUR">It's a collection of very important and serious questions for a 20 year old</h1>
+        <h1 class = "hidden" id="INTROFIVE">Starting with...</h1>
+    </div>
+    <div class="content" id = "CURSORCHOOSER">
+        <h1 id="MainButton">Which animal would you save from extinction if you could only save one?</h1>
+        <img src="Images/duck-waddling.gif" alt="Example GIF" width="300" class="bottom-right-stay">
+        <img src="Images/giphy.webp" alt="Example GIF" width="300" class="bottom-left-stay">
+    </div>
+    <div class="content" id = "BACKGROUNDCHOOSER">
+        <h1 id="MainButton">Which ice cream flavor is better?</h1>
+        <div id="message">Sorry, I think you misclicked</div>
+        <img src="Images/Blue-Moon-Premium-1.png" alt="Example GIF" width="300" class="bottom-right-stay">
+        <img src="Images/Vanilla-Ice-Cream-PNG-Images.png" alt="Example GIF" width="300" class="bottom-left-stay">
+    </div>
+    <div class="content" id = "SHOWCHOOSER">
+        <h1 id="MainButton">Which Show is better? There is a very objective choice here</h1>
+        <img src="Images/Game-of-Thrones-logo.png" alt="Example GIF" width="300" class="bottom-right-stay" id = 'original'>
+        <img src="Images/The_Bear_2022_FX.png" alt="Example GIF" width="300" class="bottom-left-stay" id="stayaway">
+        <img src="Images/Game-of-Thrones-logo.png" alt="Example GIF" width="300" class="bottom-left-stay" style = "display: none" id = "stayhere">
+    </div>
+    <div class="content" id = "AUDIOCHOOSER">
+        <h1 id="MainButton">Which album would you keep on repeat?</h1>
+        <img src="Images/chanel-orange.jpg" alt="Example GIF" width="300" class="bottom-right-stay">
+        <img src="Images/stick-season.jpg" alt="Example GIF" width="300" class="bottom-left-stay">
+    </div>
+    <div class="content" id = "TRANSITION">
+        <h1 id="FIRST">Just imagine that album's playing cause I couldn't figure out how to switch the audio 🙃</h1>
+        <h1 class = "hidden" id="NEXT">Ok now for the extremely important questions</h1>
+    </div>
+    <div class="content textbox" id = "Coffee">
+        <h1 id="MainButton">What is your favorite coffee shop in Madison?</h1>
+        <textarea id="textInput" class="text-box"></textarea>
+        <br>
+        <button class="button" onclick="saveText()">Save!</button>
+    </div>
+    <div class="content textbox" id = "Walk">
+        <h1 id="MainButton">Where would you walk to on a sunny day?</h1>
+        <textarea id="textInput" class="text-box"></textarea>
+        <br>
+        <button class="button" onclick="saveText()">Save!</button>
+    </div>
+    <div class="content textbox" id = "Chilling">
+        <h1 id="MainButton">What would you do when you got there?</h1>
+        <textarea id="textInput" class="text-box"></textarea>
+        <br>
+        <button class="button" id = "done" onclick="saveText()">Save!</button>
+    </div>
+    <div class="content" id = "finale">
+        <h1 id="MainButton">OK, so it seems like your perfect belated birthday celebration in Madison is...</h1>
+        <h1 id ="LATER">A $20 gift card to Dave and Buster's and like maybe some Whole Foods after!?!</h1>
+    </div>
+    <div class="finale" id = "TRULYFINAL">
+        <h1 id="TRULYFINAL_CONTENT"></h1>
+    </div>
+    <div class="finale" id = "LASTSCREEN">
+        <h1>Seriously though, happy birthday Sydney!</h1>
+    </div>
+    <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    
+    <script src="script.js"></script>
+</html>
