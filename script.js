@@ -175,7 +175,7 @@ window.onload = function() {
         }
     }
     
-        setTimeout(showNextHeader, 10000);
+        setTimeout(showNextHeader, 8000);
     }; 
 
 function revealhidden() {
