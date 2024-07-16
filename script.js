@@ -144,11 +144,20 @@ function handleMouseMovement(event) {
     }
 }
 function saveText() {
-    const div = document.getElementsByClassName("active");
+    const div = document.getElementsByClassName("content textbox active");
+    if (!div || !div[0]) {
+      console.error('Element with class "active" not found.');
+      return;
+    }
+  
     const textInput = div[0].getElementsByClassName("text-box");
-    value = textInput[0].value;
+    if (!textInput || !textInput[0]) {
+      console.error('Input element with class "text-box" not found.');
+      return;
+    }
+    const value = textInput[0].value;
     localStorage.setItem(div[0].id, value);
-    value = '';
+    textInput[0].value = ''; 
 }
 
 window.onload = function() {
