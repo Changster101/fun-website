@@ -10,15 +10,17 @@ function eventListener(event) {
         return;
     }
     else if (divs[currentIndex].id === 'CURSORCHOOSER') {
-        var screenWidth = window.innerWidth;
-        var cursorPosition = event.clientX;
-        if (event.clientX < window.innerWidth / 2) {
-             cursorImage = 'url("Images/giphy_cropped.png"), auto';
-         } else {
-             cursorImage = 'url("Images/duck-waddling-cursor.gif"), auto';
-         }
-         document.body.style.cursor = cursorImage;
-         showNextDiv();
+        if (event.target.tagName === 'IMG') {
+            if (event.target.id === 'duck') {
+                cursorImage = 'url("Images/duck-waddling-cursor.gif"), auto';
+                document.body.style.cursor = cursorImage;
+                showNextDiv();
+            } else if (event.target.id === 'orca') {
+                cursorImage = 'url("Images/giphy_cropped.png"), auto';
+                document.body.style.cursor = cursorImage;
+                showNextDiv();
+            }
+        }
      }
      else if (divs[currentIndex].id === 'SHOWCHOOSER') {
         if (event.target.tagName === 'IMG') {
@@ -78,21 +80,28 @@ function showFinale() {
             currentIndex = (currentIndex + 1);
             // Show the next div
             divs[currentIndex].classList.add('active');
+            console.log("HERE");
+            
             // Remove headers and go after 5 seconds
                 setTimeout(() => {
+                    console.log(divs[currentIndex]);
                     divs[currentIndex].classList.remove('active');
                     text = document.getElementById("TRULYFINAL_CONTENT");
                     const coffee = localStorage.getItem('Coffee');
                     const walk = localStorage.getItem('Walk');
-                    const actions = localStorage.getItem('Chilling');
                     document.getElementById("TRULYFINAL").classList.add('active');
-                    text.innerHTML = `Or more boring would be coffee from ${coffee} and then a walk to ${walk} to do ${actions}.<br>Dave and busters is probably cooler though`;
+                    text.innerHTML = `Or alternatively coffee from ${coffee} and then a scenic walk (with ducks?) to ${walk}`;
                     setTimeout(() => {
                         // Remove 'active' class from TRULYFINAL
                         document.getElementById("TRULYFINAL").classList.remove('active');
-                        document.getElementById("LASTSCREEN").classList.add('active');
+                        document.getElementById("SECONDTOLAST").classList.add('active');
+                        setTimeout(() => {
+                            // Remove 'active' class from TRULYFINAL
+                            document.getElementById("SECONDTOLAST").classList.remove('active');
+                            document.getElementById("LASTSCREEN").classList.add('active');
+                        }, 6000)
                     }, 8000);
-                }, 8000);
+                }, 9500);
             }
 
 // Get the image element
@@ -143,6 +152,7 @@ function saveText() {
 }
 
 window.onload = function() {
+    localStorage.clear();
     var elements = document.getElementsByClassName("text-box");
     for (var i = 0; i < elements.length; i++) {
         var element = elements[i];
@@ -150,7 +160,7 @@ window.onload = function() {
     }
     }
 window.onload = function() {
-    const headers = ['INTRO', 'INTROTWO', 'INTROTHREE', 'INTROFOUR', 'INTROFIVE'];
+    const headers = ["backgroundAudio", 'INTRO', 'INTROTWO', 'INTROTHREE', 'INTROFOUR', 'INTROFIVE'];
     let currentIndexIntro = 0;
 
     function showNextHeader() {
@@ -167,7 +177,7 @@ window.onload = function() {
                 nextHeader.classList.remove('hidden');
                 nextHeader.classList.add('active');
                 currentIndexIntro++;
-                setTimeout(showNextHeader, 5000); // Call the function again after 5 seconds
+                setTimeout(showNextHeader, 5500); // Call the function again after 5 seconds
             } else {
                 // If there are no more headers, call showNextDiv()
                 showNextDiv();
@@ -175,7 +185,7 @@ window.onload = function() {
         }
     }
     
-        setTimeout(showNextHeader, 8000);
+        setTimeout(showNextHeader, 6000);
     }; 
 
 function revealhidden() {
@@ -226,8 +236,11 @@ function replaceHeaders() {
     headerContainer.appendChild(newHeader1);
     headerContainer.appendChild(newHeader2);
 }
-
-
+document.getElementById('playButton').addEventListener('click', function() {
+    var music = document.getElementById('backgroundAudio');
+    music.play();
+    this.style.display = 'none'; // Hide the button after click
+  });
 /*
 var screenWidth = window.innerWidth;
         var cursorPosition = event.clientX;

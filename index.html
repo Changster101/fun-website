@@ -9,18 +9,20 @@
 </head>
 
 <body>
-    <audio id="backgroundAudio" src="Images/audio.mp3" autoplay loop hidden></audio>
-    <div class="content active" id = "STARTSCREEN">
-        <h1 id="INTRO">Happy Birthday Sydney!</h1>
+    <audio id="backgroundAudio" src="Images/audio.mp3"></audio>
+    <button class = 'active button' id="playButton">CLICK ME</button>
+    <div class="content active typewriter" id = "STARTSCREEN">
+        <h1 class = "hidden" id="INTRO">Happy Birthday Sydney!</h1>
         <h1 class = "hidden" id="INTROTWO">I wasn't sure what to get you so...</h1>
         <h1 class = "hidden" id="INTROTHREE">I made this 😃</h1>
         <h1 class = "hidden" id="INTROFOUR">It's a collection of very important and serious questions for a 20 year old</h1>
-        <h1 class = "hidden" id="INTROFIVE">Starting with...</h1>
+        <h1 class = "hidden" id="INTROFIVE">Naturally, I should start with the most important:</h1>
+        
     </div>
     <div class="content" id = "CURSORCHOOSER">
         <h1 id="MainButton">Which animal would you save from extinction if you could only save one?</h1>
-        <img src="Images/duck-waddling.gif" alt="Example GIF" width="300" class="bottom-right-stay">
-        <img src="Images/giphy.webp" alt="Example GIF" width="300" class="bottom-left-stay">
+        <img src="Images/duck-waddling.gif" alt="Example GIF" width="300" class="bottom-right-stay" id = "duck">
+        <img src="Images/giphy.webp" alt="Example GIF" width="300" class="bottom-left-stay" id = "orca">
     </div>
     <div class="content" id = "BACKGROUNDCHOOSER">
         <h1 id="MainButton">Which ice cream flavor is better?</h1>
@@ -41,7 +43,7 @@
     </div>
     <div class="content" id = "TRANSITION">
         <h1 id="FIRST">Just imagine that album's playing cause I couldn't figure out how to switch the audio 🙃</h1>
-        <h1 class = "hidden" id="NEXT">Ok now for the extremely important questions</h1>
+        <h1 class = "hidden" id="NEXT">Ok now for two extremely important questions</h1>
     </div>
     <div class="content textbox" id = "Coffee">
         <h1 id="MainButton">What is your favorite coffee shop in Madison?</h1>
@@ -50,26 +52,24 @@
         <button class="button" onclick="saveText()">Save!</button>
     </div>
     <div class="content textbox" id = "Walk">
-        <h1 id="MainButton">Where would you walk to on a sunny day?</h1>
-        <textarea id="textInput" class="text-box"></textarea>
-        <br>
-        <button class="button" onclick="saveText()">Save!</button>
-    </div>
-    <div class="content textbox" id = "Chilling">
-        <h1 id="MainButton">What would you do when you got there?</h1>
+        <h1 id="MainButton">Where's your favorite nature spot? (Don't say the Biocore garden)</h1>
         <textarea id="textInput" class="text-box"></textarea>
         <br>
         <button class="button" id = "done" onclick="saveText()">Save!</button>
     </div>
     <div class="content" id = "finale">
         <h1 id="MainButton">OK, so it seems like your perfect belated birthday celebration in Madison is...</h1>
-        <h1 id ="LATER">A $20 gift card to Dave and Buster's and like maybe some Whole Foods after!?!</h1>
+        <h1 id ="LATER">A $20 gift card to Dave and Buster's and perhaps some Whole Foods after!?!</h1>
     </div>
     <div class="finale" id = "TRULYFINAL">
         <h1 id="TRULYFINAL_CONTENT"></h1>
     </div>
+    <div class="finale" id = "SECONDTOLAST">
+        <h1>Dave and Buster's is probably more fun though</h1>
+    </div>
     <div class="finale" id = "LASTSCREEN">
         <h1>Seriously though, happy birthday Sydney!</h1>
+        <h1 id ="LATER">We can have a proper belated celebration in Madison</h1>
     </div>
     <ul class="circles">
         <li></li>

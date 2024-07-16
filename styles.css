@@ -36,9 +36,10 @@ h1 {
     animation: reveal 2.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
 }
 #LATER {
-    animation: revealthree 4s cubic-bezier(0.77, 0, 0.175, 1) 0.25s forwards;
+    animation: revealthree 6s cubic-bezier(0.77, 0, 0.175, 1) 0.25s forwards;
 }
-
+  
+  
 .bottom-right {
     padding: 10px 20px; /* Example padding */
     position: absolute; /* Absolute positioning relative to the parent */
@@ -80,7 +81,7 @@ img {
     transition: transform 0.3s ease;
 }
 img:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 .button {
     appearance: button;
